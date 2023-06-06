@@ -1,9 +1,12 @@
 function MainLayout(props) {
-  return (
-    <div className="grid w-screen h-screen bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-950 via-red-600 to-stone-700 text-white text-lg">
-      {props.children}
-    </div>
-  );
-}
 
-export default MainLayout;
+    let darkmode = "grid w-screen h-screen bg-slate-600 text-lg"
+    let lightmode = "grid w-screen h-screen bg-slate-100 text-lg"
+    return (
+      <div className={props.mode? darkmode : lightmode}>
+        {props.children}
+      </div>
+    );
+  }
+  
+  export default MainLayout;
